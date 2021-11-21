@@ -18,7 +18,9 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-        overflow: hidden;
+            overflow: hidden;
+            background-attachment: fixed;
+            
       }
       #tab {
         display: none;
@@ -34,9 +36,9 @@
             <img class="float-end" src="https://www.rcsiucd.edu.my/wp-content/uploads/2020/08/programme-icon-02.png" width="140px" style="position: relative; bottom: 120px;">
         </div>
         <hr class="featurette-divider" style="position: relative; left: 150px; top: 10px;" width="70%">
-        <form id="registration_form" method="get">
+        <form id="logform" method="get">
 
-          <div class="Tab" style="position:relative; ">
+          <div class="Tab">
             <p class="text-title fs-4 fw-bold text-success" style="position: relative;top: px; left: 370px;">Personal Information</p>
             <div class="form-floating" style="position: relative; top: 30px; left: 20px; width: 300px;">
                 <input type="text" class="form-control" id="firstname" placeholder="firstname" required>
@@ -68,7 +70,7 @@
                 <input type="radio"class="form-check-input" name="gender" value="Female" placeholder="Firstname" required>&nbsp;&nbsp;&nbsp;Female
               </div>
             </div>
-            <div class="Tab">
+            <div class="Tab" style="display: none;">
               <p class="text-title fs-4 fw-bold text-success" style="position: relative;top: 8px; left: 370px;">Medical Information</p>
               <div style="position: relative; top: 25px; left: 100px; width: 300px;">
                 <label class="text-success fw-bold" for="floatingPassword">Medical History</label>
@@ -165,38 +167,37 @@
                 </div>
               </div>
 
-              <button id="prevbtn" onclick="prev(-1)" style="position: fixed; top: 30em; left: 360px; width: 150px;" class=" special-btn btn btn-secondary btn-lg fw-bold " type="submit">Previous</button>
-              <button id="nextbtn" onclick="next(1)"style="position: fixed; top: 30em; left: 1000px; width: 150px;" class="special-one-btn btn btn-success btn-lg fw-bold " type="submit">Next</button>
+              <button id="prevbtn" onclick="btn1()" style="position: fixed; top: 30em; left: 360px; width: 150px; display: none;" class=" special-btn btn btn-secondary btn-lg fw-bold " type="button">Previous</button>
+              <button id="nextbtn" onclick="btn2()" style="position: fixed; top: 30em; left: 1000px; width: 150px;" class="special-one-btn btn btn-success btn-lg fw-bold " type="button">Next</button>
+              <button id="nextbtn-change" onclick="btn3()" style="position: fixed; top: 30em; left: 1000px; width: 150px; display: none;" class="special-one-btn btn btn-success btn-lg fw-bold " type="Submit">Submit</button>
         </form>
     </div>
     <script>
-      let value = 0;
-      let val;
-      //remove the previous button
-      function prevshow(){
-        document.querySelector('#prevbtn').style.display = "none"; //prevbutton
-        document.querySelectorAll('.Tab')[1].style.display = "none"; //tab 1
-      }
-      
-      function nextshow(){
-        document.querySelector('#nextbtn').innerHTML = "Submit";
-        document.querySelectorAll('.Tab')[0].style.display = "none";
-      }
-        function prev(n){
-          if (n == -1) {
-            nextshow();
-            val = n;
-          }
-        }
-        function next(n) {
-          if (n == 1) {
-            prevshow();
-            val = n;
-          }
-      }
-      
-      prevshow();
+     function btn2() {
+      document.getElementById('prevbtn').style.display = "inline"; //prevbtn present
+      let docu = document.getElementsByClassName('Tab'); //Tab
+      docu[1].style.display = "inline";// 1 true
+      docu[0].style.display = "none";// 0 false
+      document.getElementById('nextbtn').style.display = "none"; //nextbtn none
+      document.getElementById('nextbtn-change').style.display = "inline"; //nextbtn-chnage present
+     }
+     function btn1() {
+       document.getElementById('prevbtn').style.display = "none"; //prevbtn none
+       let doc = document.getElementsByClassName('Tab');//Tab
+       doc[1].style.display = "none";// 1 none
+       doc[0].style.display = "inline" //0 present
+       document.getElementById('nextbtn').style.display = "inline";//nextbtn present
+       document.getElementById('nextbtn-change').style.display = "none";//nextbtn-change none
+     }
     </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
+<!-- document.getElementById('prevbtn').style.display = "inline";
+let docu = document.getElementsByClassName('Tab');
+docu[1].style.display = "inline";
+docu[0].style.display = "none";
+
+document.getElementById('prevbtn').style.display = "inline";
+        let docu = document.getElementsByClassName('Tab');
+        docu[0].style.display = "inline"; -->

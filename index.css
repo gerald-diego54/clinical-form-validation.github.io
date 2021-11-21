@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 792px;
+}
+.side-container {
+    width: 45%;
+    background-image: url('https://7hillscenter.org/wp-content/uploads/2017/02/Day-Center-7hills-background-image-1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 792px;
+    filter: brightness(0.7);
+}
+.text-color {
+    color: rgb(255, 255, 255);
+    font-family: 'Gotham Rounded SSm A", "Gotham Rounded SSm B", Helvetica, Arial, sans-serif';
+    font-weight: 1000px;
+    font-size: 60px;
+    position: relative; 
+    line-height: 51px;
+    bottom: 300px;
+    left: 140px;
+    filter: brightness(3);
+}
+.sub-text {
+    color: rgb(255, 255, 255);
+    font-family: 'Gotham Rounded SSm A", "Gotham Rounded SSm B", Helvetica, Arial, sans-serif';
+    font-weight: 1000px;
+    font-size: 30px;
+    position: relative; 
+    line-height: 80px;
+    bottom: 300px;
+    left: 303px;
+    filter: brightness(3);
+    font-style: italic;
+}
+.right-container {
+    width: 55%;
+    height: 792px;
+    float: right;
+    position: relative;
+    bottom: 954px;
+    padding-top: 200px;
+}
+.width {
+    width: 300px;
+}
+.position {
+    position: relative;
+    left: 271px;
+}
+.mb-4 {
+    position: relative; 
+    left: 100px;
+}
+.h3 {
+    position: relative; 
+    left: 70px;
+    font-size: 45px;
+    color: #000000;
+}
+.h5 {
+    color: #BABABA;
+    position: relative;
+    left: 70px;
+    padding-bottom: 50px;
+}
+.btn {
+    background:#286771;
+    color: white;
+    position: relative;
+    left: 260px;
+}
+.btn:hover {
+    color: white;
+}
+.mt-2 {
+    position: relative;
+    left: 300px;
+}

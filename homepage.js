@@ -1,38 +1,44 @@
-
-// function ValidateEmail(inputText)
-// {
-// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-// console.log(inputText);
-// if(inputText.value.match(mailformat))
-// {
-// alert("Valid email address!");
-// document.logform.text1.focus();
-// return true;
-// }
-// else
-// {
-// alert("You have entered an invalid email address!");
-// document.logform.text1.focus();
-// return false;
-// }
-// }
-let passWord = logForm["floatingPassword"].value.trim();
-if (passWord === "") {
-  alert("Please provide password!");
-  logForm["floatingPassword"].focus(); //validate
-  return false;
-}
-if (passWord.length !== 4) {
-  alert("Provide maximum password atleast 4 characters!");
-  logForm["floatingPassword"].focus();
-  return false;
-}
-if (confirm_password.length !== 4 ) {
-  alert("Provide maximum confirmation password atleast 4 characters!");
-  return false;
-}
-
-if (passWord !== confirm_password) {
-  alert("Invalid confiramtion password");
-  return false;
+function validateForm(){
+  let first_name_validation = /[0-9]/;
+  let space_validation = /\s/;
+  let email_validation =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  let logForms = document.forms['logform'];
+  let fname = logForms["fname"].value;
+  let lname = logForms["lname"].value;
+  let email = logForms["email"].value;
+  
+  if (first_name_validation.test(fname)) {
+    alert("Firstname must not have number characters");
+    logForms["fname"].focus();
+    return false;
+  }
+  if (fname == "") {
+    alert("Empty Field [Firstname]");
+    logForms["fname"].focus();
+    return false;
+  }
+  if (first_name_validation.test(lname)) {
+    alert("Lastname must not have number characters");
+    logForms["lname"].focus();
+    return false;
+  }
+  if (lname == "") {
+    alert("Empty Field [Laststname]");
+    logForms["lname"].focus();
+    return false;
+  }
+  if (!email.match(email_validation)) {
+    alert(!email_validation.test(email));
+    alert("Invalid email format!");
+    logForms["email"].focus();
+    return false;
+  }
+  else {
+    alert("Proceeding to Login");
+    return true;
+  }
+  if (first_name_validation.test(lname)) {
+    alert("Lastname must not have number characters");
+    return false;
+  }
 }
