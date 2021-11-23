@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-image: url('https://7hillscenter.org/wp-content/uploads/2017/02/Day-Center-7hills-background-image-1.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        background-attachment: fixed;    
+  }
+  #tab {
+    display: none;
+  }
